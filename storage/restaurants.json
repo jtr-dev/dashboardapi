@@ -15,8 +15,8 @@
           "wraps"
         ],
         "hours": {
-          "open": "12 PM",
-          "close": "2 AM"
+          "open": "11 AM",
+          "close": "1 AM"
         },
         "image": "images/dining-room.jpg",
         "location": {
@@ -63,8 +63,8 @@
           "subs"
         ],
         "hours": {
-          "open": "12 PM",
-          "close": "2 AM"
+          "open": "10 AM",
+          "close": "10 PM"
         },
         "image": "images/restaurant.jpg",
         "location": {
