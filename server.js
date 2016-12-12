@@ -1,7 +1,5 @@
 
 var express = require("express");
-var bodyParser = require("body-parser");
-var Pageres = require('pageres');
 var app = express();
 
 app.use(bodyParser.json());
