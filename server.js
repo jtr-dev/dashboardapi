@@ -10,24 +10,24 @@ var app = express();
 
   app.get("/restaurants", function (req, res) {
         var restaurants = [];
-        var file = '/storage/restaurants.json'
+        var file = './storage/restaurants.json'
         jsonfile.readFile(file, function (err, obj) {
             console.dir(obj);
             console.log(obj);
             restaurants.push(obj);
+        res.send(obj);
         })
-        res.send(restaurants);
     });
 
     app.get("/reviews", function (req, res) {
         var reviews = [];
-        var file = '/storage/reviews.json'
+        var file = './storage/reviews.json'
         jsonfile.readFile(file, function (err, obj) {
             console.dir(obj);
             console.log(obj);
-            reviews.push(obj);
+            // reviews.push(obj);
+        res.send(obj);
         })
-        res.send(reviews);
     });
 // var routes = require("./routes/routes.js")(app);
 
