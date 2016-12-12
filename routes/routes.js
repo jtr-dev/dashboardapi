@@ -2,12 +2,29 @@ var Pageres = require('pageres');
 var fs = require('fs');
 var appRouter = function (app) {
 
+
+
+
     app.get("/restaurants", function (req, res) {
-        res.send('/storage/restaurants.json');
+        var restaurants = [];
+        var file = '/storage/restaurants.json'
+        jsonfile.readFile(file, function (err, obj) {
+            console.dir(obj);
+            console.log(obj);
+            restaurants.push(obj);
+        })
+        res.send(restaurants);
     });
 
     app.get("/reviews", function (req, res) {
-        res.send('/storage/reviews.json');
+        var reviews = [];
+        var file = '/storage/reviews.json'
+        jsonfile.readFile(file, function (err, obj) {
+            console.dir(obj);
+            console.log(obj);
+            reviews.push(obj);
+        })
+        res.send(reviews);
     });
 
 }
