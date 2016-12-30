@@ -5,24 +5,20 @@ var app = express();
 
 
 
-  app.get("/restaurants", function (req, res) {
-        var restaurants = [];
-        var file = './storage/restaurants.json'
+  app.get("/issues", function (req, res) {
+        var file = './storage/issues.json'
         jsonfile.readFile(file, function (err, obj) {
             console.dir(obj);
             console.log(obj);
-            restaurants.push(obj);
         res.send(obj);
         })
     });
 
-    app.get("/reviews", function (req, res) {
-        var reviews = [];
-        var file = './storage/reviews.json'
+    app.get("/revenue", function (req, res) {
+        var file = './storage/revenue.json'
         jsonfile.readFile(file, function (err, obj) {
             console.dir(obj);
             console.log(obj);
-            // reviews.push(obj);
         res.send(obj);
         })
     });
