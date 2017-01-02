@@ -6,7 +6,7 @@ var app = express();
 
 
   app.get("/issues", function (req, res) {
-        var file = './storage/issues.json'
+        var file = './storage/issues.txt'
         jsonfile.readFile(file, function (err, obj) {
             console.dir(obj);
             console.log(obj);
