@@ -5,8 +5,7 @@ var csv = require('csvtojson');
 var app = express();
 
 function convertCSV(file) {
-    csv()
-        .fromFile(file)
+    return csv().fromFile(file)
         .on('json', (jsonObj) => {
             return jsonObj;
         })
