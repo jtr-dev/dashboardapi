@@ -4,15 +4,13 @@ var jsonfile = require('jsonfile');
 var csv = require('csvtojson');
 var app = express();
 
-function convertCSV(file) {
-    return csv().fromFile(file)
+     csv().fromFile('./storage/issues.txt')
         .on('json', (jsonObj) => {
-            return jsonObj;
+             issues.push(jsonObj)
         })
         .on('done', (error) => {
             console.log(error)
         })
-}
 
 var issues = [];
 var newIssues = [{
@@ -47,10 +45,7 @@ var newIssues = [{
 
 
 app.get("/issues", function (req, res) {
-    let file = './storage/issues.txt'
-    let newFile = convertCSV(file)
-    console.log(newFile);
-    issues.push(newFile)
+    console.log(issues)
     updateIssues()
     res.send(issues);
 });
