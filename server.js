@@ -49,7 +49,10 @@ var newIssues = [{
 
 app.get("/issues", function (req, res) {
     let file = './storage/issues.txt'
-    issues = convertCSV(file)
+    let newFile = convertCSV(file)
+    console.log(newFile);
+    issues.push(newFile)
+    updateIssues()
     res.send(issues);
 });
 
@@ -61,14 +64,17 @@ app.get("/revenue", function (req, res) {
         res.send(obj);
     })
 });
+
 // var routes = require("./routes/routes.js")(app);
 
-setInterval(() => {
-    issues.push(newIssues[Math.floor(Math.random() * newIssues.length)]);
-}, 17000);
-setInterval(() => {
-    issues.splice(Math.floor(Math.random() * issues.length), 1);
-}, 18000);
+function updateIssues() {
+    setInterval(() => {
+        issues.push(newIssues[Math.floor(Math.random() * newIssues.length)]);
+    }, 17000);
+    setInterval(() => {
+        issues.splice(Math.floor(Math.random() * issues.length), 1);
+    }, 18000);
+}
 
 var server = app.listen(process.env.port || 3000, function () {
     console.log("Listening on port %s...", server.address().port);
